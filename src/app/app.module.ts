@@ -8,7 +8,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import { UserComponent } from './user/user.component';
 import { LoginComponent } from './login/login.component';
-import { HttpClientModule,  } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptor } from './interceptors/token-interceptor.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,9 @@ import { HttpClientModule,  } from '@angular/common/http';
     MatButtonModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
