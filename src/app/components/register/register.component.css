@@ -1,0 +1,58 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #363232;
+    background-size: cover;
+    height: 91vh;
+  }
+ .labellogin {
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     color:white;
+     font-size: 55px;
+     font-weight: 700;
+ }
+ .logindiv {
+    text-align: center;
+    padding-top: 3rem;
+ }
+ .formdiv {
+     background-color: #514D4D;
+     height: 65%;
+     width: 40%;
+     display:block;
+     margin: auto;
+     margin-top: 60px;
+     text-align: center;
+ }
+ .pericon {
+     color:white;
+     font-size: 100px;
+     margin-right: 60px;
+     padding-top: 1rem;
+ }
+ /* .inputfield {
+     display:block;
+     color:white;
+ } */
+.mat-form-field {
+    color:white;
+    display:block;
+    width: 50%;
+    margin: auto;
+}
+.mat-form-field-underline {
+    color:white;
+}
+.mat-form-field-empty.mat-form-field-label {
+    color: green;
+}
+.but {
+    border:none;
+    height: 49px;
+    width: 136px;
+    background-color: #1D9F9F;
+    color:white;
+    font-size: 25px;
+    margin-left: 25px;
+    margin-top: 20px;
+}
