@@ -10,7 +10,7 @@
             <input class='input' matInput placeholder="Email" formControlName="email">
         </mat-form-field>
         <mat-form-field class='inputfield'>
-            <input class='input' matInput placeholder="Password" formControlName="password">
+            <input class='input' type="password" matInput placeholder="Password" formControlName="password">
         </mat-form-field>
         <button [disabled]="loginForm.invalid" class='but' color="primary" mat-flat-button type ="submit">Login</button>
         <button class='but' matButton routerLink="/register" >Register</button>

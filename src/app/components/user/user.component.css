@@ -1,0 +1,29 @@
+.body {
+    padding: 0;
+    margin: 0;
+    background-color: #363232;
+    background-size: cover;
+    height: 91vh;
+  }
+  .labellogin {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:white;
+    font-size: 55px;
+    font-weight: 700;
+    padding-left: 2rem;
+}
+.formdiv {
+    background-color: #514D4D;
+    height: auto;
+    width: 80%;
+    display:block;
+    margin: auto;
+    margin-top: 60px;
+}
+table {
+    width: 100%;
+}
+
+button {
+    margin: 2rem;
+}

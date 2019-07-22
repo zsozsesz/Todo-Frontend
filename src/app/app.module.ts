@@ -14,8 +14,12 @@ import { RegisterComponent } from './components/register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
-import {MatInputModule, MatIconModule} from '@angular/material';
-
+import {MatInputModule, MatIconModule, MatNativeDateModule} from '@angular/material';
+import {MatDialogModule} from '@angular/material/dialog';
+import { CreateTaskComponent } from './modals/create-task/create-task.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatTableModule} from '@angular/material/table';
+import { TaskComponent } from './components/task/task.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,9 @@ import {MatInputModule, MatIconModule} from '@angular/material';
     NavBarComponent,
     UserComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    CreateTaskComponent,
+    TaskComponent
   ],
   imports: [
     BrowserModule,
@@ -37,11 +43,16 @@ import {MatInputModule, MatIconModule} from '@angular/material';
     MatFormFieldModule,
     MatSelectModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule,
+    MatDatepickerModule,
+    MatTableModule,
+    MatNativeDateModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true}
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [CreateTaskComponent]
 })
 export class AppModule { }
