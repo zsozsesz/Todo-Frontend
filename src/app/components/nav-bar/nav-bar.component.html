@@ -3,7 +3,7 @@
         <ng-container *ngIf="auth.$login | async">
                 <a mat-button routerLink="/profile">Profile</a>
                 <a mat-button routerLink="">Users</a>
-                <a mat-button routerLink="">Tasks</a>
+                <a mat-button routerLink="/tasks">Tasks</a>
                 <a mat-button routerLink="">Logout</a>
         </ng-container>
         <ng-container  *ngIf="!(auth.$login | async)">

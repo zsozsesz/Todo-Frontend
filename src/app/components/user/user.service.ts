@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, BehaviorSubject } from 'rxjs';
+import { Observable} from 'rxjs';
 import { UserDto } from 'src/app/common/dto/user.dto';
 import { TaskDto } from 'src/app/common/dto/task.dto';
 
@@ -16,7 +16,7 @@ export class UserService {
     return this.http.get(this.baseURL + '/user/profile');
   }
 
-  addTask(taskDto: TaskDto): Observable<any> {
+  addTask(taskDto: TaskDto): Observable<UserDto> {
     return this.http.post(this.baseURL + '/user/create', taskDto);
   }
 }

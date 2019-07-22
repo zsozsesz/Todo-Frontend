@@ -4,6 +4,8 @@ import { UserComponent } from './components/user/user.component';
 import { LoginGuard } from './common/guards/login.guard';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { TaskComponent } from './components/task/task.component';
+import { AdminGuard } from './common/guards/admin.guard';
 
 const routes: Routes = [
   {
@@ -12,14 +14,14 @@ const routes: Routes = [
   {
     path: 'login', component: LoginComponent
   },
- /* {
-    path: 'task', component: TaskComponent
-  },/*/
+  {
+    path: 'tasks', component: TaskComponent , canActivate: [AdminGuard]
+  },
   {
     path: 'register', component: RegisterComponent
   },
   {
-    path: '', redirectTo: 'user', pathMatch: 'full'
+    path: '', redirectTo: 'profile', pathMatch: 'full'
   }
 ];
 

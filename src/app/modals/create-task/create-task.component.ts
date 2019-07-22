@@ -4,6 +4,7 @@ import { UserService } from 'src/app/components/user/user.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { TaskDto } from 'src/app/common/dto/task.dto';
 import * as moment from 'moment';
+import { TaskService } from 'src/app/components/task/task.service';
 
 @Component({
   selector: 'app-create-task',
@@ -15,6 +16,7 @@ export class CreateTaskComponent implements OnInit {
   constructor(
     private readonly fb: FormBuilder,
     private readonly userService: UserService,
+    private readonly taskService: TaskService,
     public dialogRef: MatDialogRef<CreateTaskComponent>,
     @Inject(MAT_DIALOG_DATA) public data: TaskDto
     ) {
@@ -24,6 +26,15 @@ export class CreateTaskComponent implements OnInit {
         startDate: ['',  Validators.compose([Validators.required])],
         endDate: ['',  Validators.compose([Validators.required])],
     });
+
+    if (this.data) {
+        this.taskForm.patchValue({
+            name: data.name,
+            description: data.description,
+            startDate: data.startDate,
+            endDate: data.endDate
+        });
+    }
   }
 
 
@@ -34,10 +45,17 @@ export class CreateTaskComponent implements OnInit {
       startDate: moment(this.taskForm.get('startDate').value).format('YYYY-MM-DD'),
       endDate: moment(this.taskForm.get('endDate').value).format('YYYY-MM-DD'),
     };
-    this.userService.addTask(task).subscribe(res => {
-      this.dialogRef.close(res);
-    });
+    if (this.data) {
+      this.taskService.editTask(task, this.data.id).subscribe(res => {
+        this.dialogRef.close(res);
+      });
+    } else {
+      this.userService.addTask(task).subscribe(res => {
+        this.dialogRef.close(res);
+      });
+    }
   }
+
   ngOnInit() {
   }
 
