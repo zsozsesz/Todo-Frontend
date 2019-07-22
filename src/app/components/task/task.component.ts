@@ -46,6 +46,16 @@ export class TaskComponent implements OnInit {
         this.getTasks();
       });
     }
-
+  }
+  create() {
+    const dialogRef = this.dialog.open(CreateTaskComponent, {
+      width: '50%',
+      data: null,
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.getTasks();
+      }
+    });
   }
 }

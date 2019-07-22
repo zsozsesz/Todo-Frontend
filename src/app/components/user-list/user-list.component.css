@@ -1,0 +1,21 @@
+.body {
+    padding: 0;
+    margin: 0;
+    background-color: #363232;
+    background-size: cover;
+    height: 91vh;
+}
+
+.formdiv {
+
+    height: auto;
+    width: 80%;
+    display:block;
+    margin: auto;
+    padding-top: 60px;
+
+}
+table {
+    width: 100%;
+}
+

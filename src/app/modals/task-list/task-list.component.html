@@ -1,0 +1,73 @@
+<div class="body">
+        
+        <div class='formdiv'>
+                <h2>Users tasks:</h2>
+                <table mat-table [dataSource]="userTasks" class="mat-elevation-z8">
+                        <ng-container matColumnDef="name">
+                          <th mat-header-cell *matHeaderCellDef> Name </th>
+                          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                        </ng-container>
+                      
+                        <ng-container matColumnDef="description">
+                          <th mat-header-cell *matHeaderCellDef> Description </th>
+                          <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+                        </ng-container>
+                      
+                        <ng-container matColumnDef="endDate">
+                          <th mat-header-cell *matHeaderCellDef> Start Date </th>
+                          <td mat-cell *matCellDef="let element"> {{element.startDate}} </td>
+                        </ng-container>
+        
+                        <ng-container matColumnDef="startDate">
+                          <th mat-header-cell *matHeaderCellDef> End Date </th>
+                          <td mat-cell *matCellDef="let element"> {{element.endDate}} </td>
+                        </ng-container>
+
+                        <ng-container matColumnDef="action">
+                                <th mat-header-cell *matHeaderCellDef> Actions </th>
+                                <td mat-cell *matCellDef="let element">
+                                    <button  color="primary" mat-flat-button type="button" (click)="unassign(element.id)"> unassign</button>
+                                </td>
+                        </ng-container>
+                      
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+    </div>
+    <div class='formdiv'>
+            <h2>Assignable tasks:</h2>
+            <table mat-table [dataSource]="assingableTasks" class="mat-elevation-z8">
+                    <ng-container matColumnDef="name">
+                      <th mat-header-cell *matHeaderCellDef> Name </th>
+                      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                    </ng-container>
+                  
+                    <ng-container matColumnDef="description">
+                      <th mat-header-cell *matHeaderCellDef> Description </th>
+                      <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+                    </ng-container>
+                  
+                    <ng-container matColumnDef="endDate">
+                      <th mat-header-cell *matHeaderCellDef> Start Date </th>
+                      <td mat-cell *matCellDef="let element"> {{element.startDate}} </td>
+                    </ng-container>
+    
+                    <ng-container matColumnDef="startDate">
+                      <th mat-header-cell *matHeaderCellDef> End Date </th>
+                      <td mat-cell *matCellDef="let element"> {{element.endDate}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="action">
+                            <th mat-header-cell *matHeaderCellDef> Actions </th>
+                            <td mat-cell *matCellDef="let element">
+                                <button  color="primary" mat-flat-button type="button" (click)="assign(element.id)"> Assign</button>
+                            </td>
+                    </ng-container>
+                  
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+    </div>
+
+</div>
+

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable} from 'rxjs';
 import { TaskDto } from 'src/app/common/dto/task.dto';
-import { TouchSequence } from 'selenium-webdriver';
+
 
 @Injectable({
   providedIn: 'root'
@@ -23,5 +23,9 @@ export class TaskService {
 
   deleteTask(id: number) {
     return this.http.delete(this.baseURL + '/task/' + id);
+  }
+
+  assignUser(taskId: number, userId: number) {
+    return this.http.post(this.baseURL + '/task/assign', {userId, taskId});
   }
 }

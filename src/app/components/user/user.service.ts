@@ -15,8 +15,19 @@ export class UserService {
   getUserData(): Observable<UserDto> {
     return this.http.get(this.baseURL + '/user/profile');
   }
-
   addTask(taskDto: TaskDto): Observable<UserDto> {
     return this.http.post(this.baseURL + '/user/create', taskDto);
+  }
+  getAllUser(): Observable<UserDto[]> {
+    return this.http.get<UserDto[]>(this.baseURL + '/user');
+  }
+  getAssignableTasks(id: number): Observable<TaskDto[]> {
+    return this.http.get<UserDto[]>(this.baseURL + '/user/assignable/ ' + id);
+  }
+  unAssign(userId: number, taskId: number) {
+    return this.http.post(this.baseURL + '/user/unassign', {userId, taskId});
+  }
+  getUser(id: number): Observable<UserDto>{
+    return this.http.get<UserDto>(this.baseURL + '/user/' + id);
   }
 }

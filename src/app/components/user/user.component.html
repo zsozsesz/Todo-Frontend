@@ -1,7 +1,7 @@
 <div class='body' *ngIf="!($hidden | async)">
     <div class='logindiv'>
         <label class='labellogin'>{{user.name}}</label>
-        <img src="{{user.avatar}}">
+        <img src="/static/{{user.avatar}}">
     </div>
     <button  color="primary" mat-flat-button type="button" (click)="addTask()">Add Task</button>
     <div class='formdiv'>

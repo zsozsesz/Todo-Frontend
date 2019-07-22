@@ -20,6 +20,8 @@ import { CreateTaskComponent } from './modals/create-task/create-task.component'
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatTableModule} from '@angular/material/table';
 import { TaskComponent } from './components/task/task.component';
+import { UserListComponent } from './components/user-list/user-list.component';
+import { TaskListComponent } from './modals/task-list/task-list.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { TaskComponent } from './components/task/task.component';
     LoginComponent,
     RegisterComponent,
     CreateTaskComponent,
-    TaskComponent
+    TaskComponent,
+    UserListComponent,
+    TaskListComponent
   ],
   imports: [
     BrowserModule,
@@ -53,6 +57,6 @@ import { TaskComponent } from './components/task/task.component';
     {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true}
   ],
   bootstrap: [AppComponent],
-  entryComponents: [CreateTaskComponent]
+  entryComponents: [CreateTaskComponent, TaskListComponent]
 })
 export class AppModule { }

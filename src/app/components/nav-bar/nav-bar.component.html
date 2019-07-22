@@ -2,9 +2,12 @@
     <div class="nav-row">
         <ng-container *ngIf="auth.$login | async">
                 <a mat-button routerLink="/profile">Profile</a>
-                <a mat-button routerLink="">Users</a>
-                <a mat-button routerLink="/tasks">Tasks</a>
-                <a mat-button routerLink="">Logout</a>
+                <ng-container  *ngIf="(auth.$role | async) === 'ADMIN'">
+                    <a mat-button routerLink="/users">Users</a>
+                    <a mat-button routerLink="/tasks">Tasks</a>
+                </ng-container >
+            
+                <a mat-button (click)="logout()">Logout</a>
         </ng-container>
         <ng-container  *ngIf="!(auth.$login | async)">
                 <a mat-button routerLink="/login">Login</a>
