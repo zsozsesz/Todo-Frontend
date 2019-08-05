@@ -1,16 +1,16 @@
-<body>
+
     <div class='logindiv'>
         <label class='labellogin'>Register</label>
     </div>
 <div class="formdiv">
-    <mat-icon class='pericon'>person_outlined</mat-icon> 
+    <mat-icon class='pericon'>person_outlined</mat-icon>
     <form [formGroup]="registerForm" (submit)="addUser()">
         <div>
                 <mat-form-field>
                   <input matInput placeholder="Name" formControlName="name">
                 </mat-form-field>
                 <mat-form-field>
-                  <input matInput placeholder="Email" formControlName="email"> 
+                  <input matInput placeholder="Email" formControlName="email">
                 </mat-form-field>
                 <mat-form-field>
                   <input type ="password" formControlName="password" matInput placeholder="Password">
@@ -26,7 +26,7 @@
                 </mat-form-field>
                 <div class="fileInput">
                     <label for="fileinput">Select Image: </label>
-                    <input type="file" id="fileinput" (change)="onFileChange($event)"> 
+                    <input type="file" id="fileinput" (change)="onFileChange($event)">
                 </div>
 
                  <button [disabled]="registerForm.invalid" class='but' color="primary" mat-flat-button type ="submit">Save</button>
@@ -34,4 +34,3 @@
         </div>
     </form>
 </div>
-</body>

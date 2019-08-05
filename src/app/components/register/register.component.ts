@@ -36,10 +36,6 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
   }
-  // login(){
-  //     const data = this.registerForm.value();
-  //     this.authService.login(data);
-  // }
   addUser() {
     if ( this.registerForm.get('password').value !==  this.registerForm.get('confirmPassword').value) {
         this.message = 'passwords should match';
